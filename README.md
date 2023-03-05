@@ -1,5 +1,9 @@
 # Simple Chat App with ChatGPT
 
+<p align="center">
+  <img width="400" alt="demo" src="https://user-images.githubusercontent.com/6212292/222955653-e72cd889-ae39-463a-b721-b8ce05038423.png">
+</p>
+
 ## About
 
 This is a simple & lightweight chat app built with
