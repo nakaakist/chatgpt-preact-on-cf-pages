@@ -1,0 +1,20 @@
+{
+  "private": true,
+  "scripts": {
+    "start": "wmr",
+    "build": "wmr build --prerender",
+    "serve": "wmr serve",
+    "format": "prettier --write ."
+  },
+  "eslintConfig": {
+    "extends": "preact"
+  },
+  "dependencies": {
+    "preact": "^10.13.0",
+    "preact-iso": "^2.3.1"
+  },
+  "devDependencies": {
+    "prettier": "^2.8.4",
+    "wmr": "^3.8.0"
+  }
+}
