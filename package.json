@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "start": "wmr",
+    "start": "wrangler pages dev -- wmr",
     "build": "wmr build --prerender",
     "serve": "wmr serve",
     "format": "prettier --write ."
@@ -15,6 +15,7 @@
   },
   "devDependencies": {
     "prettier": "^2.8.4",
-    "wmr": "^3.8.0"
+    "wmr": "^3.8.0",
+    "wrangler": "^2.12.0"
   }
 }
