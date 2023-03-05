@@ -13,10 +13,10 @@
     "module": "esnext",
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
-    "downlevelIteration": true
+    "downlevelIteration": true,
+    "types": ["@cloudflare/workers-types"]
   },
   "include": ["node_modules/wmr/types.d.ts", "**/*"],
-  "exclude": ["functions/**/*"],
   "typeAcquisition": {
     "enable": true
   }
