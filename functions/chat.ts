@@ -1,4 +1,4 @@
-import { Message, ROLES } from "./types";
+import { Message, ROLES } from "../types";
 
 interface Env {
   OPENAI_API_KEY: string;
