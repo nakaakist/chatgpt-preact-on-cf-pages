@@ -8,6 +8,7 @@ const SYSTEM_MESSAGE = {
   role: "system",
   content: "You are a helpful assistant.",
 };
+const MODEL = "gpt-3.5-turbo";
 
 const parseRequestBody = async (request: Request): Promise<Message[]> => {
   const body = await request.json();
@@ -29,13 +30,14 @@ const parseRequestBody = async (request: Request): Promise<Message[]> => {
 };
 
 export const onRequest: PagesFunction<Env> = async ({ env, request }) => {
-  // validate & parse request body
+  // Validate method
   if (request.method !== "POST") {
     return new Response("not found", {
       status: 404,
     });
   }
 
+  // Validate & parse request body
   let messages: Message[];
   try {
     messages = await parseRequestBody(request);
@@ -45,7 +47,9 @@ export const onRequest: PagesFunction<Env> = async ({ env, request }) => {
     });
   }
 
-  // call OpenAI API
+  // Call OpenAI API
+  // Note that the official OpenAI library is not yet compatible with
+  // Cloudflare Workers due to the internal use of Axios (https://github.com/openai/openai-node/issues/30).
   const data: any = await fetch("https://api.openai.com/v1/chat/completions", {
     method: "POST",
     headers: {
@@ -53,12 +57,10 @@ export const onRequest: PagesFunction<Env> = async ({ env, request }) => {
       Authorization: `Bearer ${env.OPENAI_API_KEY}`,
     },
     body: JSON.stringify({
-      model: "gpt-3.5-turbo",
+      model: MODEL,
       messages: [SYSTEM_MESSAGE, ...messages],
     }),
   }).then((res) => res.json());
-
-  console.log;
 
   return new Response(JSON.stringify(data?.choices[0]?.message));
 };
