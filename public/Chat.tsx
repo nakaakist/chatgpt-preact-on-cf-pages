@@ -46,29 +46,29 @@ export const Chat = () => {
   return (
     <section>
       {messages.map((m, i) => (
-        <div className={styles.message} key={i}>
-          <div className={styles.role}>{m.role}</div>
-          <pre className={styles.messageContent}>{m.content}</pre>
+        <div class={styles.message} key={i}>
+          <div class={styles.role}>{m.role}</div>
+          <pre class={styles.messageContent}>{m.content}</pre>
         </div>
       ))}
 
-      {loading && <div className={styles.loading}>Generating...</div>}
+      {loading && <div class={styles.loading}>Generating...</div>}
       {hasError && (
-        <div className={styles.error}>An error occurred. Please retry.</div>
+        <div class={styles.error}>An error occurred. Please retry.</div>
       )}
 
       <form onSubmit={onSubmit}>
         <input
-          className={styles.input}
+          class={styles.input}
           placeholder={`Ask anything (up to ${MAX_QUESTION_LENGTH} characters)`}
           type="text"
           value={input}
-          onChange={(e) => setInput((e.target as any).value)}
+          onInput={(e) => setInput((e.target as any)?.value ?? "")}
           maxLength={MAX_QUESTION_LENGTH}
           disabled={loading}
         />
         <div>
-          <input className={styles.submit} type="submit" disabled={loading} />
+          <input class={styles.submit} type="submit" disabled={loading} />
         </div>
       </form>
     </section>
