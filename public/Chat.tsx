@@ -67,7 +67,9 @@ export const Chat = () => {
           maxLength={MAX_QUESTION_LENGTH}
           disabled={loading}
         />
-        <input className={styles.submit} type="submit" disabled={loading} />
+        <div>
+          <input className={styles.submit} type="submit" disabled={loading} />
+        </div>
       </form>
     </section>
   );

@@ -3,34 +3,37 @@
 }
 
 .messageContent {
-    white-space: pre-wrap;
-  }
+  white-space: pre-wrap;
+  font-size: 16px;
+}
 
 .role {
-  font-size: 12px;
+  font-size: 14px;
   color: #999;
 }
 
 .loading {
-    margin: 30px 0;
-    font-size: 12px;
-    color: #999;
+  margin: 30px 0;
+  font-size: 14px;
+  color: #999;
 }
 
 .error {
-    margin: 30px 0;
-    font-size: 12px;
-    color: #f00;
+  margin: 30px 0;
+  font-size: 14px;
+  color: #f00;
 }
 
 .input {
-    margin: 20px 0;
-    max-width: 900px;
-    width: 100%;
-    height: 30px;
+  margin: 20px 0;
+  max-width: 900px;
+  width: 100%;
+  height: 30px;
+  font-size: 16px;
 }
 
 .submit {
-    width: 100px;
-    height: 30px;
+  width: 100px;
+  height: 30px;
+  font-size: 16px;
 }
